@@ -1,0 +1,109 @@
+/* Base colors and fonts */
+:root {
+  --background: #0f111a;       /* dark background */
+  --foreground: #e0e0e0;       /* light text */
+  --accent: #b7e5eb;           /* your cyan tint */
+  --card-bg: rgba(255, 255, 255, 0.05); /* semi-transparent card */
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #00ffff; /* brighter cyan on hover */
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #00ffff;
+  transform: scale(1.05);
+}
+
+/* Glassmorphic cards */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f111a, #121429 80%);
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: var(--foreground);
+}
+
+/* Hero buttons */
+.hero .buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .card {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
