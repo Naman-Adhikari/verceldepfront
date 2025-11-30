@@ -1,40 +1,88 @@
-/* Base colors and fonts */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+/* --- Base theme --- */
 :root {
-  --background: #0f111a;       /* dark background */
-  --foreground: #e0e0e0;       /* light text */
-  --accent: #b7e5eb;           /* your cyan tint */
-  --card-bg: rgba(255, 255, 255, 0.05); /* semi-transparent card */
+  --background: #0f111a;
+  --foreground: #e0e0e0;
+  --accent: #b7e5eb;
+  --card-bg: rgba(255, 255, 255, 0.05);
   --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: 'Courier New', monospace;
 }
 
+/* Base font  with pulsating border muhahaha*/
 body {
-  background-color: var(--background);
+  background-image: url('/images/aiblame2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  min-height: 100vh;
   margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
+
+  /* Rounded edges and initial border */
+  border: 5px solid var(--accent);
+  border-radius: 20px;
+
+  /* Animation for pulsating border thickness */
+  animation: pulse-border 2s infinite;
+}
+
+/* Keyframes to make border thickness grow and shrink */
+@keyframes pulse-border {
+  0% {
+    border-width: 3px;
+  }
+  50% {
+    border-width: 10px;
+  }
+  100% {
+    border-width: 3px;
+  }
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'MedievalSharp', cursive;
   color: var(--accent);
-  font-weight: bold;
+}
+/* Add to globals.css */
+.hero img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 80%;
+  object-fit: cover;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  margin: 1rem 0;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero img:hover {
+  transform: scale(1.1) rotate(360deg);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
 
-/* Links */
+@media (max-width: 768px) {
+  .hero img {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 a:hover {
-  color: #00ffff; /* brighter cyan on hover */
+  color: #00ffff;
 }
 
-/* Buttons */
+/* Original button styles */
 button {
   background-color: var(--accent);
   color: var(--background);
@@ -45,6 +93,7 @@ button {
   font-weight: 600;
   transition: all 0.3s ease;
 }
+
 button:hover {
   background-color: #00ffff;
   transform: scale(1.05);
@@ -72,7 +121,8 @@ button:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #0f111a, #121429 80%);
+  background: transparent; /* was gradient before */
+  position: relative;      /* for layering sunny1.png */
 }
 
 .hero h1 {
@@ -92,6 +142,22 @@ button:hover {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+/* Page container spacing */
+.page-container {
+  margin-top: 1rem; /* equivalent to mt-24 in Tailwind */
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* space between Hero, Projects, Contact */
+  align-items: center;
+}
+
+/* Optional: make sections full-width but center content */
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Responsive adjustments */
