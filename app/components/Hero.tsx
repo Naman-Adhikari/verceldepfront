@@ -24,24 +24,55 @@ export default function Hero() {
   </div>
 
   {/* Buttons around the circle */}
-  <a className="orbit-btn" style={{ "--i": 0 }} href="#projects">
-    <FaProjectDiagram size={18} /> Projects
-  </a>
-  <a className="orbit-btn" style={{ "--i": 1 }} href="https://github.com/Naman-Adhikari" target="_blank">
-    <FaGithub size={18} /> GitHub
-  </a>
-  <a className="orbit-btn" style={{ "--i": 2 }} href="#contact">
-    <FaAddressBook size={18} /> Contact
-  </a>
-  <a className="orbit-btn" style={{ "--i": 3 }} href="https://youtu.be/dQw4w9WgXcQ?si=7R9ayccva-HgctDP" target="_blank">
-    <SiOnlyfans size={18} /> Only Friends
-  </a>
-  <a className="orbit-btn" style={{ "--i": 4 }} href="#projects">
-    <FaSnowman size={18} /> About me
-  </a>
-  <a className="orbit-btn" style={{ "--i": 5 }} href="#projects">
-    <FaProjectDiagram size={18} /> tobedone
-  </a>
+<a
+  className="orbit-btn"
+  style={{ "--i": 0 } as React.CSSProperties}
+  href="#projects"
+>
+  <FaProjectDiagram size={18} /> Projects
+</a>
+
+<a
+  className="orbit-btn"
+  style={{ "--i": 1 } as React.CSSProperties}
+  href="https://github.com/Naman-Adhikari"
+  target="_blank"
+>
+  <FaGithub size={18} /> GitHub
+</a>
+
+<a
+  className="orbit-btn"
+  style={{ "--i": 2 } as React.CSSProperties}
+  href="#contact"
+>
+  <FaAddressBook size={18} /> Contact
+</a>
+
+<a
+  className="orbit-btn"
+  style={{ "--i": 3 } as React.CSSProperties}
+  href="https://youtu.be/dQw4w9WgXcQ?si=7R9ayccva-HgctDP"
+  target="_blank"
+>
+  <SiOnlyfans size={18} /> Only Friends
+</a>
+
+<a
+  className="orbit-btn"
+  style={{ "--i": 4 } as React.CSSProperties}
+  href="#projects"
+>
+  <FaSnowman size={18} /> About me
+</a>
+
+<a
+  className="orbit-btn"
+  style={{ "--i": 5 } as React.CSSProperties}
+  href="#projects"
+>
+  <FaProjectDiagram size={18} /> tobedone
+</a>
 </div>
     </section>
   );
