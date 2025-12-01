@@ -29,16 +29,15 @@ body {
   border-radius: 20px;
 
   /* Animation for pulsating border thickness */
-  animation: pulse-border 2s infinite;
+  animation: pulse-border 5s infinite;
 }
 
-/* Keyframes to make border thickness grow and shrink */
 @keyframes pulse-border {
   0% {
     border-width: 3px;
   }
   50% {
-    border-width: 10px;
+    border-width: 3px;
   }
   100% {
     border-width: 3px;
@@ -80,23 +79,6 @@ a {
 }
 a:hover {
   color: #00ffff;
-}
-
-/* Original button styles */
-button {
-  background-color: var(--accent);
-  color: var(--background);
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #00ffff;
-  transform: scale(1.05);
 }
 
 /* Glassmorphic cards */
@@ -143,15 +125,6 @@ button:hover {
   gap: 1rem;
   flex-wrap: wrap;
 }
-/* Page container spacing */
-.page-container {
-  margin-top: 1rem; /* equivalent to mt-24 in Tailwind */
-  display: flex;
-  flex-direction: column;
-  gap: 4rem; /* space between Hero, Projects, Contact */
-  align-items: center;
-}
-
 /* Optional: make sections full-width but center content */
 section {
   width: 100%;
@@ -172,4 +145,64 @@ section {
     width: 100%;
     padding: 1.5rem;
   }
+}
+
+.orbit-container {
+  position: relative;
+  width: 550px;
+  height: 550px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center image stays still */
+.center-image img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Orbiting buttons */
+.orbit-btn {
+  position: absolute;
+  padding: 12px 22px;
+  border-radius: 25px;
+  background: black;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-size: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+
+  /* Circular placement (6 buttons → 60°) */
+  transform: rotate(calc(var(--i) * 60deg)) translate(220px) rotate(calc(var(--i) * -60deg));
+
+  /* Smooth orbit animation */
+  animation: orbit 25s linear infinite;
+}
+
+/* Smooth orbiting motion */
+@keyframes orbit {
+  from {
+    transform: rotate(calc(var(--i) * 60deg)) translate(220px) rotate(calc(var(--i) * -60deg));
+  }
+  to {
+    transform: rotate(calc(var(--i) * 60deg + 360deg)) translate(220px) rotate(calc(var(--i) * -60deg - 360deg));
+  }
+}
+
+/* Hover effect (still works with animation) */
+.orbit-btn:hover {
+  background: #094d54;
+  transform: rotate(calc(var(--i) * 60deg)) translate(235px) rotate(calc(var(--i) * -60deg));
+}
+
+.orbit-btn svg {
+  width: 20px;
+  height: 20px;
 }
