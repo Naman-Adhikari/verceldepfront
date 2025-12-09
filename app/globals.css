@@ -206,6 +206,8 @@ section {
   width: 20px;
   height: 20px;
 }
+
+/* ------------------------AMBIENT MUSIC CSS ------------------------------------------- */
 .music-player {
   position: fixed;
   top: 300px;
@@ -227,3 +229,4 @@ section {
   transform: scale(1.2);
   background: #094d54;
 }
+

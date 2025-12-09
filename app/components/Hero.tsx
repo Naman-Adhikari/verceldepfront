@@ -6,7 +6,7 @@ import { FaGithub, FaSnowman, FaAddressBook, FaProjectDiagram } from "react-icon
 export default function Hero() {
   return (
     <section className="hero">
-      <h1>Welcome! I'm Naman.</h1>
+      <h1>Welcome!</h1>
 
 <div className="orbit-container">
   <div className="center-image">
